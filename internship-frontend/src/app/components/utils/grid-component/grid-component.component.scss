@@ -1,0 +1,35 @@
+:host {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Phones */
+@media (max-width: 767px) {
+    :host {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablets (portrait and landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    :host {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop and larger */
+@media (min-width: 1025px) {
+    :host {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
