@@ -1,8 +1,12 @@
 <header>
-    <img class="logo" height="50" src="/assets/images/logo.svg">
-    <h1>Header</h1>
-    <nav>
-        <a *ngFor="let navItem of navigationItems" [routerLink]="'/' + navItem">{{navItem}}</a>
+    <div class="logo-container">
+        <img class="logo" height="48" src="/assets/images/logo_black.svg">
+        <h1 class="roboto-regular">Stefan Miskovic</h1>
+    </div>
+    <nav class="roboto-medium">
+        <a href="https://www.bisafans.de/pokedex/index.php">Bisafans</a>
+        <a href="https://pokeapi.co/">PoKeAPI</a>
+        <a class="login-button" routerLink="/login">Sign-In</a>
     </nav>
 </header>
 <main>
@@ -11,19 +15,18 @@
     <app-grid-component [items]="pokemonData"></app-grid-component>
 </main>
 <footer>
-    <div class="list col-1">
-        <h1>Col1:</h1>
-        <img class="logo" height="50" src="/assets/images/logo.svg">
+    <div class="list">
+        <img class="logo" height="100" src="/assets/images/logo_white.svg">
     </div>
-    <div class="list col-2">
-        <h1>Col2:</h1>
-        <a *ngFor="let navItem of navigationItems">{{navItem}}</a>
+    <div class="list footer-nav roboto-medium">
+        <a href="https://www.bisafans.de/pokedex/index.php">Bisafans</a>
+        <a>PoKeAPI</a>
+        <a class="login-button" routerLink="/login">Sign-In</a>
     </div>
-    <div class="list col-3">
-        <h1>Col3:</h1>
+    <div class="list robot-bold contact-information">
         <a>{{contactInformation.name}}</a>
         <a>{{contactInformation.address}}</a>
         <a>{{contactInformation.phone}}</a>
-        <a>{{contactInformation.email}}</a>
+        <a class="email" [href]="'mailto:' + contactInformation.email">{{contactInformation.email}}</a>
     </div>
 </footer>

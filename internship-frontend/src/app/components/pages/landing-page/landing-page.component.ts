@@ -37,8 +37,6 @@ export class LandingPageComponent implements OnInit {
   }
 
   onValueChange(searchValue: string) {
-
     this.searchService.filterItems(this.gridElement.el, searchValue);
-
   }
 }
