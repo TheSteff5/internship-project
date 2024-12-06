@@ -1,5 +1,5 @@
 <header>
-    <img class="logo" src="/assets/images/logo.svg">
+    <img class="logo" height="50" src="/assets/images/logo.svg">
     <h1>Header</h1>
     <nav>
         <a *ngFor="let navItem of navigationItems" [routerLink]="'/' + navItem">{{navItem}}</a>
@@ -7,12 +7,12 @@
 </header>
 <main>
     <h1>Main Area</h1>
-    <app-grid-component [items]="items"></app-grid-component>
+    <app-grid-component [items]="pokemonData"></app-grid-component>
 </main>
 <footer>
     <div class="list col-1">
         <h1>Col1:</h1>
-        <img class="logo" src="/assets/images/logo.svg">
+        <img class="logo" height="50" src="/assets/images/logo.svg">
     </div>
     <div class="list col-2">
         <h1>Col2:</h1>

@@ -1,1 +1,7 @@
-<app-card class="item" *ngFor="let item of items" [card]="item" (click)="navigate(item)">{{item}}</app-card>
+<app-card class="item" *ngFor="let item of items"
+    [cardImg]="item['sprites']['other']['official-artwork']['front_default']" 
+    [cardTitle]="item['name']"
+    [cardShortText]="item['name']" 
+    (click)="navigate(item)">
+    {{item}}
+</app-card>

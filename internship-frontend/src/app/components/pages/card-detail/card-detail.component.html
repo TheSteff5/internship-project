@@ -1,5 +1,4 @@
-<div *ngIf="card">
-    <img height="100" [src]="card.img">
-    <h1> {{card.title}}</h1>
-    <p>{{card.shortText}}</p>
+<div *ngIf="pokemon">
+    <h1>{{pokemon.name}}</h1>
+    <img height="100" class="card-image" [src]="getImagePath()">
 </div>
