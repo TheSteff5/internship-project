@@ -3,12 +3,30 @@
         <img class="logo" height="48" src="/assets/images/logo_black.svg">
         <h1 class="roboto-regular">Stefan Miskovic</h1>
     </div>
-    <nav class="roboto-medium">
+    <div [ngClass]="[!isPhone ? 'hidden' : '']">
+        <img style="display: flex; justify-content: center;" width="24" src="/assets/icons/hamburger_menu_icon.svg"
+            (click)="openSideNav()">
+    </div>
+    <nav [ngClass]="[isPhone ? 'hidden' : '']" class="roboto-medium">
         <a href="https://www.bisafans.de/pokedex/index.php">Bisafans</a>
         <a href="https://pokeapi.co/">PoKeAPI</a>
         <a class="login-button" routerLink="/login">Sign-In</a>
     </nav>
 </header>
+<!-- Sidenav for mobile phone view -->
+<div #wrapper [ngClass]="[!isPhone ? 'hidden' : '']" class="wrapper roboto-medium" (click)="closeSideNav()">
+    <div #sidenav class="sidenav" (click)="onSidenavClick($event)">
+        <div class="sidenav-header">
+            <img style="display: flex; justify-content: center;" width="24" src="/assets/icons/close_icon.svg"
+                (click)="closeSideNav()">
+        </div>
+        <div class="sidenav-content">
+            <a class="login-button" routerLink="/login">Sign-In</a>
+            <a href="https://www.bisafans.de/pokedex/index.php">Bisafans</a>
+            <a href="https://pokeapi.co/">PoKeAPI</a>
+        </div>
+    </div>
+</div>
 <main>
     <label>Search</label>
     <input [(ngModel)]="searchValue" (ngModelChange)="onValueChange(searchValue)">
@@ -18,7 +36,7 @@
     <div class="list">
         <img class="logo" height="100" src="/assets/images/logo_white.svg">
     </div>
-    <div class="list footer-nav roboto-medium">
+    <div class="list footer-nav roboto-medium" [ngClass]="[isPhone ? 'hidden' : '']">
         <a href="https://www.bisafans.de/pokedex/index.php">Bisafans</a>
         <a>PoKeAPI</a>
         <a class="login-button" routerLink="/login">Sign-In</a>
