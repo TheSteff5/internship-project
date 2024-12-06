@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import { CardComponent } from "../card/card.component";
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class GridComponentComponent {
   @Input() items!: any[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public el: ElementRef) { }
 
   navigate(data: any): void {
     this.router.navigate(['/pokemon/', data.id]);
