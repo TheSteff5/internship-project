@@ -20,10 +20,10 @@ export class LandingPageComponent implements OnInit {
 
   navigationItems: string[] = ["nav-1", "nav-2", "nav-3"];
   contactInformation: Contact = {
-    name: "John",
+    name: "Stefan Miskovic",
     address: "Birkengasse 3c/3",
     phone: "+43 660 7 11 3346",
-    email: "stefanmiskovic@example.com"
+    email: "stefanmiskovic11@hotmail.com"
   };
 
   pokemonData: PokemonData[] = [];
@@ -37,8 +37,6 @@ export class LandingPageComponent implements OnInit {
   }
 
   onValueChange(searchValue: string) {
-
     this.searchService.filterItems(this.gridElement.el, searchValue);
-
   }
 }

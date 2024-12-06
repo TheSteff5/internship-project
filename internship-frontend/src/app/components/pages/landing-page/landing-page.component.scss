@@ -1,27 +1,48 @@
+@use '../../../../colors'; // import scss color variables
+
 :host {
     display: flex;
     flex-direction: column;
 }
 
+/* Header area styling */
 header {
     position: sticky;
     top: 0;
-    height: 64px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    background-color: white;
+    justify-content: space-between;
+    background-color: colors.$background-color;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 8px 24px;
 
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 12px;
+        gap: 16px;
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: colors.$secondary-color;
+        }
+    }
+
+    .logo-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+
+        h1 {
+            margin: 0px;
+        }
     }
 }
 
+/* Main area styling */
 main {
     display: flex;
     flex-direction: column;
@@ -30,19 +51,59 @@ main {
     padding: 24px;
 }
 
+
+/* Footer area styling */
 footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(196, 196, 196);
+    align-items: center;
+    padding: 24px;
+    background-color: colors.$secondary-color;
+
+    a {
+        text-decoration: none;
+        color: colors.$primary-color !important;
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        a {
+            cursor: pointer;
+        }
+
+        .login-button {
+            padding: 8px 16px;
+            background-color: colors.$primary-color !important;
+            color: colors.$secondary-color !important;
+            border-radius: 5px;
+        }
+    }
+}
+
+/* Component styling */
+.contact-information {
+    .email {
+        text-decoration: underline;
+    }
+
+    a {
+        padding: 4px 0px;
+    }
+}
+
+.login-button {
+    padding: 8px 16px;
+    background-color: colors.$secondary-color;
+    color: colors.$primary-color !important;
+    border-radius: 5px;
 }
 
 .list {
     display: flex;
     flex-direction: column;
-}
-
-.logo {
-    height: 50px;
-    width: 50px;
 }
