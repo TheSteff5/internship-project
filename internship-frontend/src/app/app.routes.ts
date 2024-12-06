@@ -11,5 +11,5 @@ export const routes: Routes = [
     { path: 'nav-1', component: Nav1Component },
     { path: 'nav-2', component: Nav2Component },
     { path: 'nav-3', component: Nav3Component },
-    { path: 'card-detail/:item', component: CardDetailComponent },
+    { path: 'pokemon/:id', component: CardDetailComponent },
 ];

@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { CardComponent } from "../card/card.component";
 import { Router } from '@angular/router';
-import { Card } from '../../../model/Card';
 
 @Component({
   selector: 'app-grid-component',
@@ -13,12 +12,9 @@ import { Card } from '../../../model/Card';
 export class GridComponentComponent {
   @Input() items!: any[];
 
-  constructor(private router: Router) {
+  constructor(private router: Router) { }
 
-  }
-
-  navigate(data: Card): void {
-    const serializedData= encodeURIComponent(JSON.stringify(data));
-    this.router.navigate(['/card-detail/', serializedData]);
+  navigate(data: any): void {
+    this.router.navigate(['/pokemon/', data.id]);
   }
 }

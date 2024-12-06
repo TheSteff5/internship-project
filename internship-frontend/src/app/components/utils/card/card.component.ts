@@ -1,12 +1,16 @@
-import { Component, Input } from '@angular/core';
-import { Card } from '../../../model/Card';
+import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
-export class CardComponent {
-  @Input() card!: Card;
+export class CardComponent implements OnInit {
+  @Input() cardImg?: string;
+  @Input() cardTitle?: string;
+  @Input() cardShortText?: string;
+
+  ngOnInit(): void { }
 }

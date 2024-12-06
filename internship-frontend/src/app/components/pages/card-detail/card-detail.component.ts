@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Card } from '../../../model/Card';
 import { CommonModule } from '@angular/common';
+import { PokeService } from '../../../services/poke.service';
 @Component({
   selector: 'app-card-detail',
   imports: [CommonModule],
@@ -9,14 +9,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './card-detail.component.scss'
 })
 export class CardDetailComponent implements OnInit {
+  pokemon: any;
 
-  card?: Card;
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private pokeService: PokeService) { }
 
   ngOnInit() {
-    const item = JSON.parse(decodeURIComponent(this.route.snapshot.paramMap.get('item')!));
-    this.card = item;
+    this.route.params.subscribe(params => {
+      this.pokeService.getPokemonById(params['id']).subscribe(res => {
+        this.pokemon = res;
+      });
+    });
   }
 
+  getImagePath() {
+    return this.pokemon['sprites']['other']['official-artwork']['front_default'];
+  }
 }
