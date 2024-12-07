@@ -28,8 +28,11 @@
     </div>
 </div>
 <main>
-    <label>Search</label>
-    <input [(ngModel)]="searchValue" (ngModelChange)="onValueChange(searchValue)">
+    <div class="search-bar-container">
+        <img src="/assets/icons/search_icon.svg">
+        <input [(ngModel)]="searchValue" (ngModelChange)="onValueChange(searchValue)"
+            placeholder="Type three letters to start the search...">
+    </div>
     <app-grid-component [items]="pokemonData"></app-grid-component>
 </main>
 <footer>
