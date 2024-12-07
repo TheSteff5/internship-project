@@ -34,6 +34,14 @@ header {
             cursor: pointer;
             text-decoration: none;
             color: colors.$secondary-color;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            &:active {
+                opacity: 1 !important;
+            }
         }
     }
 
@@ -82,6 +90,15 @@ footer {
 
         a {
             cursor: pointer;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            &:active:not(.login-button) {
+                opacity: 1 !important;
+                color: colors.$hover-color !important;
+            }
         }
 
         .login-button {
@@ -97,6 +114,10 @@ footer {
 .contact-information {
     .email {
         text-decoration: underline;
+
+        &:active {
+            color: colors.$hover-color !important;
+        }
     }
 
     a {
@@ -109,6 +130,15 @@ footer {
     background-color: colors.$secondary-color;
     color: colors.$primary-color !important;
     border-radius: 5px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active {
+        opacity: 1 !important;
+        color: colors.$hover-color !important;
+    }
 }
 
 .list {
@@ -141,7 +171,7 @@ footer {
         position: absolute;
         left: 10px;
         height: 24px;
-        opacity: 50%;
+        opacity: 0.5;
     }
 
     input {
@@ -151,6 +181,20 @@ footer {
         }
     }
 
+    :hover {
+        transition: 0.3s;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    :active {
+        transition: 0.3s;
+        background-color: rgba(0, 0, 0, 0.05) !important;
+    }
+
+    :focus {
+        background-color: colors.$primary-color;
+        border:  1px solid black;
+    }
 }
 
 /* Phones */
