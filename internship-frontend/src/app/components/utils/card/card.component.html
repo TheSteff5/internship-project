@@ -1,5 +1,9 @@
-<div [id]="cardTitle">
-    <img height="100" class="card-image" [src]="cardImg">
-    <h1 class="card-title">{{cardTitle}}</h1>
-    <div class="card-short-text" [title]="cardShortText">{{cardShortText}}</div>
+<div class="card-container" [id]="cardTitle">
+    <div class="card-image-container">
+        <img height="100" class="card-image" [src]="cardImg">
+    </div>
+    <div class="card-text-container">
+        <h1 class="card-title">{{cardTitle}}</h1>
+        <div class="card-short-text" [title]="cardShortText">{{cardShortText}}</div>
+    </div>
 </div>
