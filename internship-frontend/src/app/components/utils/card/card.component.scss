@@ -1,3 +1,5 @@
+@use '../../../../colors'; // import scss color variables
+
 :host {
 
     display: flex;
@@ -7,7 +9,7 @@
 
     .card-container {
         width: 200px;
-        border: solid 1px #dedede;
+        border: solid 1px colors.$border-color;
         border-radius: 5px;
     }
 
@@ -29,7 +31,7 @@
 
     .card-text-container {
         border-radius: 0px 0px 5px 5px;
-        background-color: rgb(36, 36, 36);
+        background-color: colors.$card-background-color;
         padding: 16px;
 
         h1 {
@@ -38,16 +40,14 @@
         }
 
         >* {
-            color: white;
+            color: colors.$primary-color;
         }
     }
 
     &:hover {
         .card-image-container {
-            background-color: white;
-            /* White background */
+            background-color: colors.$primary-color;
             filter: brightness(0.9);
-            /* Darken the entire container slightly */
         }
 
         h1 {
@@ -60,12 +60,10 @@
     &:active {
         .card-image-container {
             filter: brightness(1);
-
-
         }
 
         h1 {
-            color: #FFB6B6 !important;
+            color: colors.$hover-color !important;
         }
     }
 }

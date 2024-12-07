@@ -33,7 +33,6 @@ export class LandingPageComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.isPhone = window.innerWidth <= 768;
-    console.log(this.isPhone)
   }
 
   constructor(private pokeService: PokeService, private searchService: SearchService) { }
