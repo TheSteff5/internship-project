@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Contact } from '../../../model/Contact';
 import { CommonModule } from '@angular/common';
